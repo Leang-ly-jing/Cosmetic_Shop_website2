@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/Assets/Img/logo2.jpg" type="image/x-icon" >  
+    <title>Discount Page</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .banner img{
+        width: 100%;
+        height: 400px;
+        background-color: aquamarine;
+
+    }
+    #row1{
+        width: 100%;
+        height: 50px;
+        background-color: rgba(216, 112, 147, 0.805);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+    }
+    .drop{
+        width: 170px;
+        height: 160px;
+        background-color: pink;
+        display: none;
+        position: absolute;
+        border-radius: 7px;
+        z-index: 1;
+    }
+    .product-card {
+        position: relative;
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .product-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+        
+    .nav-item:hover{
+        background-color: rgba(0, 0, 0, 0.096);
+        border-radius: 7px;
+    }
+    .nav-item:hover .drop{
+        display: block;
+        transition: all 1s;
+    }
+    .drop .nav-link:hover{
+        background-color: rgba(0, 0, 0, 0.149);
+        border-radius: 7px;
+    }
+    .discount-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: red;
+        color: white;
+        padding: 10px;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .card-body h6 {
+        font-size: 14px;
+        text-align: center;
+    }
+    .card-body h5 {
+        text-align: center;
+        color: #d47093;
+    }
+    .icon .nav-link:hover{
+        background-color: rgb(215, 42, 169);
+    }
+    .icon .nav-link{
+        font-size: 20px;
+        color: white;
+        border-radius: 8px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+            <div class="row d-flex " id="row1">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-8" style="display: flex; justify-content: center; align-items: end;">
+                    <nav>
+                        <ul class="nav gap-4">
+                            <li class="nav-item ">
+                                <a href="/University/Beauty.html" class="nav-link text-dark fw-bold position-relative " >Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link text-dark fw-bold">Skincare</a>
+                                <div class="drop">
+                                    <a href="/University/Mary.html" class="nav-link text-dark">Mary & May</a>
+                                    <a href="/University/DrG.html" class="nav-link text-dark">Dr.G</a>
+                                    <a href="" class="nav-link text-dark">CorsX</a>
+                                    <a href="/University/torriden.html" class="nav-link text-dark">Torriden</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link text-dark fw-bold">Lipstick</a>
+                                <div class="drop">
+                                    <a href="/University/Romand.html" class="nav-link text-dark">Romand</a>
+                                    <a href="/University/3CE.html" class="nav-link text-dark">3CE</a>
+                                    <a href="/University/lipDior.html" class="nav-link text-dark">Dior</a>
+                                    <a href="/University/lipchanel.html" class="nav-link text-dark">Channel</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/University/Discount.html" class="nav-link text-dark fw-bold">Discount</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link text-dark fw-bold active">Popular</a>
+                                <div class="drop">
+                                    <a href="" class="nav-link text-dark">3CE Brand</a>
+                                    <a href="" class="nav-link text-dark">Torriden</a>
+                                    <a href="" class="nav-link text-dark">Romand</a>
+                                    <a href="" class="nav-link text-dark">Dior</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link">
+                                    <div class="search">
+                                    <i class="fa-solid fa-magnifying-glass fw-bold text-dark"></i>
+                                </div>
+                            </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        <div class="banner">
+            <img src="https://img.freepik.com/free-vector/gradient-international-women-s-day-sale-horizontal-banner_23-2149288139.jpg" alt="">
+        </div>    
+    </div>
+    <div class="container mt-5">
+        <div class="produce d-flex mt-4">
+            <a href="/University/pageRomand/page13.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem;">
+                    <span class="discount-badge">25% OFF</span>
+                    <img src="https://romand.us/cdn/shop/files/5_c05a7f6a-5681-49f4-9982-6101f05da8f7.jpg?v=1708061986&width=900" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                        <h6>  Rom&nd Glasting Color Gloss 05 Dim Mauve</h6>
+                        <h5><s>$8.99</s> $6.99</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageRomand/page14.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem;">
+                    <span class="discount-badge">25% OFF</span>
+                    <img src="https://romand.us/cdn/shop/files/6_7e26706f-a2b5-4929-8243-9ea994691d10.jpg?v=1708061986&width=900" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                        <h6>  rom&nd Glasting Color Gloss 06 DEEPEN MOOR </h6>
+                        <h5><s>$8.99</s> $6.99</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageRomand/page15.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem;">
+                    <span class="discount-badge">25% OFF</span>
+                    <img src="https://romand.us/cdn/shop/files/1_ff420334-7108-455f-abe3-84234fdb54d4.jpg?v=1708067195&width=900" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                        <h6>  rom&nd Glasting Water Tint (14 Mauve Moon) </h6>
+                        <h5><s>$8.99</s> $6.99</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageRomand/page16.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem;">
+                    <span class="discount-badge">25% OFF</span>
+                    <img src="https://romand.us/cdn/shop/files/2_c8435605-6c61-4f6f-956a-93668613eb05.jpg?v=1708067195&width=900" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                        <h6>  rom&nd Glasting Water Tint 15 Sundown Series (4g)</h6>
+                        <h5><s>$8.99</s> $6.99</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="produce d-flex mt-4">
+            <a href="/University/page3ce/page9.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem;height: 390px;">
+                    <span class="discount-badge">15% OFF</span>
+                    <img src="https://image.globaloliveyoungshop.com/prdtImg/1356/2bd7f111-c83b-4bfd-9e35-551588a480cd.jpg?RS=1500x1500&AR=0&SF=webp&QT=80" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                        <h6>  3CE Sheer Liquid Blusher 3g</h6>
+                        <h5><s>$15.20</s> $12.99</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/page3ce/page10.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 390px;">
+                    <span class="discount-badge">15% OFF</span>
+                    <img src="https://image.globaloliveyoungshop.com/prdtImg/1811/7e8658d0-ead5-4e78-be7b-e071c99c2db0.jpg?RS=1500x1500&AR=0&SF=webp&QT=80" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">3CE Drop Glow Gel 3.8g</h6>
+                      <h5><s>$15.20</s> $12.99</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/page3ce/page11.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 390px;">
+                    <span class="discount-badge">15% OFF</span>
+                    <img src="https://image.globaloliveyoungshop.com/prdtImg/1425/4ee1b070-e57b-4b4e-9fa5-7a39184da258.jpg?RS=1500x1500&AR=0&SF=webp&QT=80" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">3CE Blur Water Tint</h6>
+                      <h5><s>$15.20</s> $12.99</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/page3ce/page12.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 390px;">
+                    <span class="discount-badge">15% OFF</span>
+                    <img src="https://image.globaloliveyoungshop.com/prdtImg/1106/bc126078-6af1-4c68-b835-d79f63b55e22.jpg?RS=1500x1500&AR=0&SF=webp&QT=80" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">3CE Blur Water Tint</h6>
+                      <h5><s>$15.20</s> $12.99</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="produce d-flex mt-4">
+            <a href="/University/pageDrG/page9.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem;height: 400px;">
+                    <span class="discount-badge">25% OFF</span>
+                    <img src="https://dr-g.com/cdn/shop/files/dr-g-spot-patch-dr-g-a-clear-ultra-thin-spot-patch-40502747463932_720x.jpg?v=1734930640" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">DR.G A'CLEAR ULTRA THIN SPOT PATCH</h6>
+                      <h5><s>$7.00</s> $4.99</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageDrG/page10.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 400px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://dr-g.com/cdn/shop/files/dr-g-global-moisturizers-creams-dr-g-r-e-d-blemish-clear-soothing-cream-special-set-50ml-30ml-41776608968956_720x.png?v=1733285829" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">DR.G R.E.D BLEMISH CLEAR SOOTHING CREAM SPECIAL SET (50ML+30ML) </h6>
+                      <h5><s>$34.00</s> $28.99</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageDrG/page11.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 400px;">
+                    <span class="discount-badge">10% OFF</span>
+                    <img src="https://dr-g.com/cdn/shop/files/dr-g-global-moisturizers-creams-dr-g-dermoisture-barrier-d-intense-cream-41835265622268_720x.png?v=1726314068" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">DR.G DERMOISTURE BARRIER D INTENSIVE CREAM (100ML)</h6>
+                      <h5><s>$32.00</s> $28.99</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageDrG/page12.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 400px;">
+                    <span class="discount-badge">15% OFF</span>
+                    <img src="https://dr-g.com/cdn/shop/files/dr-g-global-serums-essence-dr-g-r-e-d-blemish-clear-soothing-active-essence-80ml-43230263116028_720x.png?v=1733285649" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">DR.G R.E.D BLEMISH CLEAR SOOTHING ACTIVE ESSENCE (80ML)</h6>
+                      <h5><s>$40.00</s> $34.99</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="produce d-flex">
+            <a href="/University/pageCosrX/page1.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 390px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://i.ebayimg.com/images/g/Ia8AAOSwyylnX~Z-/s-l300.jpg" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">COSRX Advanced Snail 92 All In One Cream </h6>
+                      <h5><s>$22.00</s> $17.60</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageCosrX/page2.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 390px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://storage.googleapis.com/dakaken.appspot.com/images/product/thumbnail/1710542243967_1000082364_400x400.jpg" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">COSRX Advanced Snail 96 Mucin Power Essence 100 ml    </h6>
+                      <h5><s>$17.00</s> $13.60</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageCosrX/page3.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 390px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://faceshopgnv.com/wp-content/uploads/2024/05/%DB%B2%DB%B0%DB%B2%DB%B4_%DB%B0%DB%B5_%DB%B1%DB%B5_%DB%B1%DB%B9_%DB%B2%DB%B4_IMG_4191.jpg" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">COSRX Advanced Snail Radiance Dual Essence 80ml</h6>
+                      <h5><s>$18.00</s> $14.40</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageCosrX/page4.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem;height: 390px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://panel.blank-store.com/storage/16448/cE3aAYMS8SxSZxo8LGjVUuHycYHYX1fBQM68sfLk.jpg" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">COSRX - Advanced Snail Mucin Gel Cleanser - 150ml</h6>
+                      <h5><s>$12.00</s> $9.60</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="produce d-flex">
+            <a href="/University/pageTorriden/page1.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 390px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://koreanmartbd.com/wp-content/uploads/2024/07/Torriden-Dive-In-Low-Molecular-Hyaluronic-Acid-Cleansing-Foam-150ml.jpg" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">Torriden Dive In Low Molecular Hyaluronic Acid Cleansing Foam (150ml)</h6>
+                      <h5><s>$11.00</s> $8.80</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageTorriden/page2.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 390px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://www.dreamskinnepal.com/Assets/Product/Media/Images/Product%20Images/2024/05/torriden-dive-in-low-molecular-hyaluronic-acid-soothing-cream-100ml-skin-care-torriden-orion-xo-sri-lanka-522476.webp" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">Torriden Dive In Soothing Cream  </h6>
+                      <h5><s>$15.00</s> $12.00</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageTorriden/page3.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 390px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://rossi.lt/cdn/shop/files/TorridenDive-InLowMoleculeHyaluronicAcidSerumdrekinamasisserumas.png?v=1688997916&width=1100" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">Torriden DIVE-IN Low Molecular Hyaluronic Acid Serum</h6>
+                      <h5><s>$16.00</s> $13.80</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageTorriden/page4.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem;height: 390px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://d3i908zd4kzakt.cloudfront.net/data/item/1661751346/7KCc66qp7JeG7J2M1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">Torriden – DIVE-IN Low molecule Hyaluronic acid Toner 300mll</h6>
+                      <h5><s>$13.00</s> $10.40</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="produce d-flex mt-4">
+            <a href="/University/pageLipDior/page9.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem;height: 400px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://shop-beauty.dior.sa/cdn/shop/products/Y0124000_C012400001_E01_GHC_1080x.jpg?v=1689170524" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">DIOR LIP GLOW OIL #001 Pink</h6>
+                      <h5><s>$40.00</s> $32.00</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageLipDior/page10.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 400px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://shop-beauty.dior.sa/cdn/shop/products/Y0124000_C012400015_E01_GHC_1080x.jpg?v=1689170872" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">DIOR LIP GLOW OIL #015 Cherry</h6>
+                      <h5><s>$40.00</s> $32.00</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageLipDior/page11.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 400px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://shop-beauty.dior.sa/cdn/shop/products/Y0124000_C012400007_E01_GHC_1080x.jpg?v=1689170535" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">DIOR LIP GLOW OIL #007 Raspberry</h6>
+                      <h5><s>$40.00</s> $32.00</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageLipDior/page12.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 400px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://shop-beauty.dior.sa/cdn/shop/products/Y0124000_C012400006_E01_GHC_1080x.jpg?v=1689170529" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">DIOR LIP GLOW OIL #006 Berry</h6>
+                      <h5><s>$40.00</s> $32.00</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="produce d-flex mt-4">
+            <a href="/University/pageLipChanel/page9.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem;height: 400px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://www.chanel.com/images//t_one//w_0.38,h_0.38,c_crop/q_auto:good,f_autoplus,fl_lossy,dpr_1.1/w_1020/rouge-coco-flash-hydrating-vibrant-shine-lip-colour-66-pulse-0-1oz--packshot-default-174066-9564823552030.jpg" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">ROUGE COCO FLASH #66 - PULSE</h6>
+                      <h5><s>$48.00</s> $38.40</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageLipChanel/page10.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 400px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://www.chanel.com/images//t_one//w_0.38,h_0.38,c_crop/q_auto:good,f_autoplus,fl_lossy,dpr_1.1/w_1020/rouge-coco-flash-hydrating-vibrant-shine-lip-colour-90-jour-0-1oz--packshot-default-174090-9564824371230.jpg" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">ROUGE COCO FLASH #90 - JOUR </h6>
+                      <h5><s>$48.00</s> $38.40</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageLipChanel/page11.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 400px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://www.chanel.com/images//t_one//w_0.38,h_0.38,c_crop/q_auto:good,f_autoplus,fl_lossy,dpr_1.1/w_1020/rouge-coco-flash-hydrating-vibrant-shine-lip-colour-60-beat-0-1oz--packshot-default-174060-9564823388190.jpg" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">ROUGE COCO FLASH #60 - BEAT</h6>
+                      <h5><s>$48.00</s> $38.40</h5>
+                    </div>
+                </div>
+            </a>
+            <a href="/University/pageLipChanel/page12.html" class="nav-link">
+                <div class="card product-card" style="width: 18rem; height: 400px;">
+                    <span class="discount-badge">20% OFF</span>
+                    <img src="https://www.chanel.com/images//t_one//w_0.38,h_0.38,c_crop/q_auto:good,f_autoplus,fl_lossy,dpr_1.1/w_1020/rouge-coco-flash-hydrating-vibrant-shine-lip-colour-92-amour-0-1oz--packshot-default-174092-9564825911326.jpg" class="card-img-top" alt="...">
+                    <div class="card-body tab-content text-dark">
+                      <h6 class="card-text">ROUGE COCO FLASH #92 - AMOUR</h6>
+                      <h5><s>$48.00</s> $38.40</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="container mt-5">
+            <div class="produce d-flex">
+                <a href="/University/pageMary/page1.html" class="nav-link">
+                    <div class="card product-card" style="width: 18rem; height: 390px;">
+                        <span class="discount-badge">20% OFF</span>
+                        <img src="https://cdn.imweb.me/thumbnail/20210210/8f76f03b1814d.jpg" class="card-img-top" alt="...">
+                        <div class="card-body tab-content text-dark">
+                          <h6 class="card-text"> Mary&May Idebenone+Blackberry Intense Cream 70g</h6>
+                          <h5><s>$8.50</s> $6.80</h5>
+                        </div>
+                    </div>
+                </a>
+                <a href="/University/pageMary/page2.html" class="nav-link">
+                    <div class="card product-card" style="width: 18rem; height: 390px;">
+                        <span class="discount-badge">20% OFF</span>
+                        <img src="https://cdn.imweb.me/thumbnail/20230113/95f6cf5b32b0c.jpg" class="card-img-top" alt="...">
+                        <div class="card-body tab-content text-dark">
+                          <h6 class="card-text">Mary&May Idebenone+Blackberry Complex Serum 30ml </h6>
+                          <h5><s>$9.00</s> $7.20</h5>
+                        </div>
+                    </div>
+                </a>
+                <a href="/University/pageMary/page3.html" class="nav-link">
+                    <div class="card product-card" style="width: 18rem; height: 390px;">
+                        <span class="discount-badge">20% OFF</span>
+                        <img src="https://cdn.imweb.me/thumbnail/20210517/16f81c1b4d5ef.jpg" class="card-img-top" alt="...">
+                        <div class="card-body tab-content text-dark">
+                          <h6 class="card-text">Mary&May VitaminC+Bifida Lotion 120ml</h6>
+                          <h5><s>$14.00</s> $11.20</h5>
+                        </div>
+                    </div>
+                </a>
+                <a href="/University/pageMary/page4.html" class="nav-link">
+                    <div class="card product-card" style="width: 18rem;height: 390px;">
+                        <span class="discount-badge">20% OFF</span>
+                        <img src="https://cdn.imweb.me/thumbnail/20231222/45c966e0d99fd.jpg" class="card-img-top" alt="...">
+                        <div class="card-body tab-content text-dark">
+                          <h6 class="card-text">Mary&May Idebenone+Blackberry Intense Cream 100g</h6>
+                          <h5><s>$14.50</s> $11.60</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+    </div>
+</body>
+</html>
